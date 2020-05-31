@@ -1,0 +1,21 @@
+NixOS vs GNU Guix System
+
+Disclaimer: by 'vs' am not suggesting war between the two or something like that. Far from that, both projects collaborate with each other on a regular basis. That's cool. 
+
+Advertencia: por 'vs' no estoy hablando de competencia entre estas dos distribuciones o algo por el estilo. Por el contrario, veo bastante colaboracion entre los dos proyectos, y eso es genial.
+
+Mientras aprendia los conceptos basicos y la ideologia detras de la administracion de sistemas, el concepto de la distribucion de GNU/Linux NixOS me llamaba cada vez mas la atencion. Guardar la configuracion de todo un sistema en un solo archivo?Actualizaciones atomicas? Rollbacks integrados? 
+
+NixOS
+
+GNU Guix System
+
+Previamente llamado GuixSD, esta distribucion hereda la mayor parte de los conceptos de NixOS pero con una gran diferencia:Guile. Mientras, .
+
+Pero no es simplemente. Este proyecto posee otros 'accesorios' hechos en casa, siendo el principal el sistema de init GNU Sheperd. 
+
+Mcron es otra herramienta hecha y configurable en Guile, siendo una implementacion del programa de tareas programadas cron.
+
+Esto crea un sistema bastante bueno, en papel. Lo que nos da la posibilidad de configurar sistema, daemons y demas con el mismo lenguaje. 
+
+Al ser una distribucion pequena, Guix System tiene pocos mirrors, la mayoria localizados en US. Para mi, residenciado en Latino America, la instalacion me tomo HORAS, con unas velocidades de descarga para llorar. 

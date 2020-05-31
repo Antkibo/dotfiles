@@ -1,0 +1,62 @@
+[ Comments ]
+
+You can write single-line comments with '#' and multi-line comments between '/*' and '*/'
+
+[ Booleans ]
+
+true
+false
+&&
+||
+if <boolean-expr> then <expr> else <expr>
+
+[ Numbers ]
+
+- There are two numeric types: integers and floats
+
+Int: 1, 0, 42, (-3)
+Float: 123.45, .27e13, 12.0e2
+
+- Operations preserve numeric type
+
+4 + 6 + 12 - 12
+
+7 / 2   => 3
+7 / 2.0 => 3.5
+
+[ Strings ]
+
+"Strings literals are in double quotes."
+
+"
+  Strings literals can span 
+  multiple lines.
+"
+
+''
+  This is called an "indented string" literal.
+  It strips leading whitespace
+''
+
+''           hello world'' => "hello world"
+
+("ab" + "cd") => "abcd"
+
+- Antiquotation (${}) lets you embed values into strings
+
+"Your home directory is ${builtins.getEnv "HOME"}"
+
+[ Paths ]
+
+- Nix has a primitive data for types
+
+/tmp/tutorials/learn.nix
+
+- A relative path is resolved to an absolute path at parse time
+
+tutorials/learn.nix => /home/sigil/tutorials/learn.nix
+
+
+
+
+

@@ -1,0 +1,27 @@
+* UNIX Kernel
+The UNIX kernel provides four basic facilities: processes, a filesystem, communications, and system startup.
+
+1. Processes constitute a thread of control in an address space.
+2. The filesystem is a set of named files, organized in a tree-structured hierarchy of directories, and operations to manipulate them.
+3. Communication mechanisms provided by traditional UNIX systems include device I/O, simple reliable byte streams between related processes, and notification of exceptional events.
+4. Any real operating system has operational issues, such as how to start it running.
+
+* Kernel services
+
+The largest part of the kernel implements the system services that applications access through system calls. In 4.3BSD, this software has been organized according to
+
+1. Basic kernel facilities: timer and system clock handling, descriptor management, and process management.
+2. Memory-management support: paging and swapping.
+3. Generic system inferfaces: the I/O, control, and multiplexing operations formed on descriptors.
+4. The filesystem: files, directories, pathname translation, file locking, and I/O buffer management.
+5. Terminal-handling support: the terminal-interface driver and terminal line disciplines.
+6. Interprocess-communication facilities: sockets.
+7. Support for network communication: communication protocols and generic network facilities, such as routing.
+
+The machine-dependent aspects of the kernel are isolated from the mainstream code. The software that is machine-dependent includes
+
+- Lowest-level system-startup actions.
+- Trap and fault handling.
+- Low-level manipulation of the run-time context of a process.
+- Configuration and initialization of hardware devices.
+- Run-time support for I/O devices

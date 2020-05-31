@@ -1,0 +1,14 @@
+* Evaluation Strategies in Scheme
+
+MIT's quintessential book on programming (Structure and Interpretation of Computer Programs or SICP) explains, early on, two possible evaluation strategies for Scheme: normal order evaluation and applicative order evaluation.
+
+** Strict Evaluation
+
+Most languages use strict evaluation, of which applicative order evaluation is one of its kinds. In strict evaluation, the arguments to a function are always evaluated completely before the function is applied. This type is also called eager evaluation.
+
+Some consequences of strict evaluation are:
+1. Code that is easily understandable in terms of execution order that does not potentially change its behaviour based on a change of execution context.
+2. An easier debug process compared to other evaluation strategies due to above.
+3. Responsibility for code performance is however shifted towards the programmer, thus requiring a careful code optimisation process.
+
+   
