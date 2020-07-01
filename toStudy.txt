@@ -1,0 +1,6 @@
+- What is a computer program?
+- What is programming?
+- What is assembly?
+- What is a compiler?
+- What is an interpreter?
+- What is an instruction set?

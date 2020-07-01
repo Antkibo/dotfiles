@@ -1,0 +1,6 @@
+1. Define the problem you would like to solve
+2. Determine how are you going to solve it
+3. Write the program
+4. Compiling your source code 
+5. Linking object files and libraries
+6 & 7. Testing and Debugging
