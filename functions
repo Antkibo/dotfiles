@@ -1,0 +1,15 @@
+jump() {
+    [ -d "$HOME"/.marks ] && cd -P "$HOME"/.marks/$1
+}
+
+mark() {
+    if [ ! -d "$HOME"/.marks ]; then
+        mkdir "$HOME"/.marks
+    fi
+
+    ln -s `pwd` "$HOME"/.marks/"$1"
+}
+
+just() {
+    g++ $1 && ./a.out && rm a.out
+}

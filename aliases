@@ -1,0 +1,6 @@
+alias pins="sudo pacman -S"
+alias prem="sudo pacman -R"
+alias paqa="pacman -Q"
+alias paqe="pacman -Qe"
+alias ..="cd .."
+alias grep="grep --color=auto"
