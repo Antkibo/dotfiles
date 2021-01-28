@@ -8,3 +8,9 @@ alias vim="nvim"
 alias vi="nvim"
 alias paup="sudo pacman -Syu"
 alias pyserv="python -m http.server 8000"
+
+if [[ `cat /etc/os-release | head -n 1 | cut -d "=" -f 2` == '"void"' ]]; then
+    alias xins="doas xbps-install -S"
+    alias poweroff="doas poweroff"
+    alias reboot="doas reboot"
+fi

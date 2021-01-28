@@ -16,4 +16,6 @@ call plug#begin("~/.config/nvim/plugged")
 Plug 'mattn/emmet-vim'
 let g:user_emmet_leader_key=','
 
+Plug 'vim-airline/vim-airline'
+
 call plug#end()
