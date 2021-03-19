@@ -1,0 +1,49 @@
+
+* HTML
+
+** <p> element
+
+1. Don't use empty <p> elements to add space between other elements.
+2. You can achieve first-line indentation with CSS:
+
+#+BEGIN_SRC css
+p {
+  margin: 0;
+  /* Where ch is a unit that means "relative to the width of the '0' (zero)" */
+  text-indent: 3ch;
+}
+#+END_SRC
+
+** <h1>–<h6> elements
+
+1. Have only one <h1> element per page and use it to describe the overall purpose of the content.
+2. Don't use headings to resize text.
+3. Don't skip heading levels: always start from <h1>, followed by <h2>, and so on.
+4. Nest your headings as subsections to reflect the organization of the page content.
+5. Headings can also be used to label sectioning content, using aria-labelledby, for screen readers when there is more than one sectioning element on the same page. For example:
+
+#+BEGIN_SRC html
+<header>
+  <nav aria-labelledby="primary-navigation">
+    <h2 id="primary-navigation">Primary navigation</h2>
+    <!-- navigation items -->
+  </nav>
+</header>
+
+<footer>
+  <nav aria-labelledby="footer-navigation">
+    <h2 id="footer-navigation">Footer navigation</h2>
+    <!-- navigation items -->
+  </nav>
+</footer>
+#+END_SRC
+
+** When to use <img> vs <div> and background-image
+
+1. If you want to use an image as pure decoration, use the CSS property /background-image/.
+2. If your image is part of the *content*, use an <img> element.
+
+** Styling links
+
+- Use underlining for links, but not for other things.
+- Make them react in some way when hovered/focused, and in a slightly different way when activated. 

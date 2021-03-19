@@ -1,0 +1,343 @@
+* CSS
+
+** Handling different text directions
+
+CSS has evolved in order to better support different directionality of content, such as right-to-left but also top-to-bottom. These different directionalities are called writing modes.
+
+*** What are writing modes?
+
+A writing mode in CSS refers to whether the text is running horizontally or vertically. The /writing-mode/ property lets us switch from one mode to another.
+
+The three possible values for the writing-mode property are:
+
+  * *horizontal-tb*. Top-to-down block flow direction. Sentences run horizontally.
+  * *vertical-rl.* Right-to-left block flow direction. Sentences run vertically.
+  * *vertical-lr*. Left-to-right block flow direction. Sentences run vertically.
+
+So what writing-mode actually does is setting the direction in which block-level elements are displayed on the page -- either from top-to-bottom, right-to-left, or left-to-right. This then dictates the direction text flows in sentences.
+
+When we switch the writing-mode, we are chaning which direction is block and which is inline. In a horizontal-tb writing mode the block direction runs from top to bottom; in a vertical-rl writing mode the block direction runs right-to-left horizontally. So the block dimension is always the direction blocks are displayed on the page in the writing mode in use. The inline dimension is always the direction a sentence flows.
+
+*** Direction
+
+In addition to writing mode we also have text direction. Some languages such as Arabic are written horizontally, but right-to-left. Due to the fact that writing mode and direction of text can change, newer CSS layout methods do not refer to left and right, and top and bottom. Instead they talk about start and end along with this idea of inline and block.
+
+*** Logical properties and values
+
+A lot of properties are tied to the physical dimensions of the screen, and make most sense when in a horizontal writing mode.
+
+To make adjusting properties for other modes besides top-to-bottom easier, CSS has recently developed a set of mapped properties. These essentially replace physical properties -- things like width and height -- with logical, or flow relative versions.
+
+The property mapped to width when in a horizontal writing mode is called /inline-size/ -- it refers to the size in the *inline dimension*. The property for height is named /block-size/ and is the size in the *block dimension*.
+
+**** Logical margin, border, and padding properties
+
+In the margin, border, and padding properties you will find many instances of physical properties, for example /margin-top/, /padding-left/, and /border-bottom/. In the same way that we have mapping for width and height there are mappings for these properties.
+
+The /margin-top/ property is mapped to /margin-block-start/ -- this will always refer to the margin at the start of the block dimension.
+
+The /padding-left/ property maps to /padding-inline-start/, the padding that is applied to the start of the inline direction. This will be where sentences start in that writing mode. The /border-bottom/ property maps to /border-block-end/, which is the border at the end of the block dimension.
+
+**** Logical values
+
+There are also some properties that take physical values of /top/, /right/, /bottom/, and /left/. These values also have mappings to logical values -- /block-start/, /inline-end/, /block-end/, and /inline-start/.
+
+For example, you can float an image left to cause text to wrap round the image. You could replace left with inline-start as shown in the example below.
+
+~Currently only Firefox supports flow relative values for float. If you are using Google Chrome or Microsoft Edge, you may find that the image did not float~
+
+**** Should you use physical or logical properties?
+
+The logical properties and values are newer than their physical equivalents, and therefore have only recently been implemented in browsers. If you are not using multiple writing modes then for now you might prefer to use the physical versions.
+
+** Overflowing content
+
+Overflow is what happens when there is too much content to fit in a container. In this guide you will learn what overflow is and how to manage it.
+
+*** What is overflow?
+
+Everything in CSS is a box. Overflow happens when there is too much content to fit in a box.
+
+*** CSS tries to avoid "data loss"
+
+Wherever possible, CSS does not hide content. This would cause data loss. Instead, CSS overflows in visible ways.
+
+*** The overflow property
+
+The /overflow/ property is how you take control of an element's overflow. It is the way you instruct the browser how it should behave. THe default value of overflow is visible. With this default, we can see content when it overflows.
+
+To crop content when it overflows, you can set /overflow: hidden/. Beware that this can make some content invisible.
+
+Instead, perhaps you would like to add scrollbars when content overflows? Using /overflow: scroll/, browsers with visible scrollbars will always display them -- even if there is not enough content to overflow. By default you get scrollbars in both axes. To just scroll on the *y* axis, you could use the /overflow-y/ property, setting /overflow-y: scroll/. There's also an /overflow-x/ property (not recommended).
+
+~You can specify x and y scrolling using the overflow property, passing two values. For example, overflow: scroll hidden would set overflow-x to scroll and overflow-y to hidden.~
+
+If you only want scrollbars to appear when there is more content that can fit in the box, use overflow: auto. This allows the browser to determine if it should display scrollbars.
+
+*** Overflow establishes a Block Formatting Context
+
+When you use a value of overflow such as scroll or auto, you create a Block Formatting Context (BFC). The content of the box that you have change the value of overflow for acquires a self-contained layout. Content outside the container cannot poke into the container, and nothing can poke out of that container into the surrounding layout.
+
+*** Unwanted overflow in web design
+
+Modern layout methods manage overflow. They largely work without assumptions or dependencies for how much content there will be on a web page.
+
+When developing a site, always keep overflow in mind. Test designs with large and small amounts of content. Increase the font sizes of text. Generally ensure that your CSS works in a robust way. Changing the value of overflow to hide content, or to add scrollbars is likely to be reserved for a few select use cases.
+
+** CSS values and units 
+
+Every property used in CSS has a value type defining the set of values that are allowed for that property.
+
+*** What is a CSS value?
+
+In CSS specifications and on MDN property pages you will be able to spot value types as they will be surrounded by *angle brackets*, such as <color> or <length>. When you see the value type <color> as valid for a particular property, that means you can use any valid color as a value for that property, as listed on the <color> reference page.
+
+*** Numbers, lengths, and percentages
+
+| Data type    | Description                                       |
+| <integer>    | a whole number such as 1024 or -55                |
+| <number>     | a decimal number. For example, 128, or -1.2       |
+| <dimension>  | a <number> with a unit attached to it (e.g. 10px) |
+| <percentage> | represents a fraction of some other value         |
+
+**** Lengths
+
+The numeric type you will come across most frequently is <length>. For example, 10px (pixels) or 30em. There are two types of length used in CSS -- relative and absolute. It's important to know the difference in order to understand how big things will become.
+
+***** Absolute length units
+
+The following are all absolute units -- they are not relative to anything else, and are generally considered to always be the same size.
+
+| Unit | Name                | Equivalent to          |
+| cm   | Centimeters         | 1 cm = 38px = 25/64 in |
+| mm   | Millimeters         | 1 mm = 1/10th of 1 cm  |
+| Q    | Quarter-millimeters | 1 Q  = 1/40th of 1 cm  |
+| in   | Inches              | 1 in = 2.54 cm = 96px  |
+| pc   | Picas               | 1 pc = 1/6th of 1 in   |
+| pt   | Points              | 1 pt = 1/72th of 1 in  |
+| px   | Pixels              | 1 px = 1/96th of 1n    |
+
+Most of these units are more useful when used for print, rather than screen output. For example, we don't typically use cm (centimeters) on screen. The only value that you will commonly use is px (pixels).
+
+***** Relative length units
+
+Relative length units are relative to something else, perhaps the size of the parent element's font, or the size of the viewport. The benefit of using relative units is that with some careful planning you ca make it so the size of text or other element scales relative to everything else on the page. Some of the most useful units for web development are listed in the table below.
+
+| Unit | Relative to                                                                                                           |
+| em   | Font size of the parent (for properties like font-size), and font size of the element itself (for width and the like) |
+| ex   | x-height of the element's font                                                                                        |
+| ch   | The advance measure (width) of the glyph "0" of the element's font                                                    |
+| rem  | Font size of the root element                                                                                         |
+| lh   | Line height of the element                                                                                            |
+| vw   | 1% of the viewport's width                                                                                            |
+| vh   | 1% of the viewport's height                                                                                           |
+| vmin | 1% of the viewport's smaller dimension                                                                                |
+| vmax | 1% of the viewport's larger dimension                                                                                 |
+
+***** ems and rems
+
+em and rem are the two relative lengths you are likely to encounter most frequently when sizing anything from boxes to text.
+
+*The em unit means "my parent element's font-size"* in the case of typography, while *the rem unit means "The root element's font-size"*.
+
+**** Percentages
+
+In a lot of cases, a percentage is treated in the same way as a length. Percentages are always set relative to some other value. For example, if you set and element's font-size as a percentage it will be a percentage of the font-size of the element's parent. If you use a percentage for a width value, it will be a percentage of the width of the parent.
+
+**** Numbers
+
+Some value types accept numbers, without any unit added to them. An example of a property which accepts a unitless number is the opacity property, which controls the opacity of an element (how transparent it is). This property accepts a number between 0 (fully transparent) and 1 (fully opaque).
+
+**** Color
+
+There are many ways to specify color in CSS, and the same color values can be used anywhere.
+
+The standard color system available in modern computers is 24 bit.
+
+***** Color keywords
+
+Many colors use simple or compound names (e.g. blue or royalbue).
+
+***** Hexadecimal RGB values
+
+Hexadecimal values consist of a hash/pound symbol (#) followed by six hexadecimal numbers. Each pair represents one of the channels -- red, green, and blue.
+
+***** RGB and RGBA values
+
+The third scheme to know is RGB. An RGB value is a function -- rgb() -- which is given three parameters that represent the red, green, and blue channel values of the colors. The difference is that each channel is represented by a decimal number between 0 and 255.
+
+RGBA colors work the same way as RGB colors but have a fourth value that represents the alpha channel of the color, which controls the opacity.
+
+***** HSL and HSLA values
+
+Instead of red, green, and blue values, the hsl() function accepts hue, saturation, and lightness values, which are used to distinguish between the same colors, but in a different way:
+
+  - Hue: the base bashed of the color. This takes a value between 0 and 360, representing the angles around a color wheel.
+  - Saturation: how saturated is the color? This takes a value from 0-100%, where 0 is no color (it will appear as a shade of gray), and 100% is full color saturation.
+  - Lightness: how light or bright is the color? This takes a value from 0-100%, where 0 is no light (it will appear completely black) and 100% is full light (it will appear completely white).
+
+Just as RGB, HSL has a HSLA equivalent.
+
+**** Images
+
+The <image> value type is used wherever an image is a valid value. This can be:
+  - an actual image file pointed to via a url() function, 
+  - or a gradient.
+
+**** Position
+
+The <position> value type represents a set of 2D coordinates, used to position an item such as a background image (via /background-position/). It can take keywords such as top, left, bottom, right, and center to align items with specific bounds of a 2D box, along with lengths, which represents offsets from the top and left-hand edges of the box.
+
+A typical position value consists of two values -- the first sets the position horizontally, the second vertically. If you only specify values for one axis the other will default to center.
+
+**** Strings and identifiers
+
+Some keywords, such as those for <color>, are more accurately describied as identifiers, a special value that CSS understands. As such they are not quoted -- they are not treated as strings.
+
+There are places where you use strings in CSS. For example, when specifying generated content. In this case, the value is quoted to demonstrate that it is a string.
+
+**** Functions
+
+A function is a reusable section of code that can be run multiple times to complete a repetitive task with minimum effort on the part of both the developer and the computer. rgb(), hsl(), url(), and calc() are all functions.
+
+** Sizing items in CSS
+
+*** The natural or intrinsic size of things
+
+HTML elements have a natural size, set before they are affected by any CSS. A straightfoward example is an image. An image has a width and height defined in the image file it is embedding into the page. This size is described as the intrinsic size -- which comes from the image itself.
+
+If you place an image on a page and do not change its height and width, either using attributes on the <img> tag or CSS, it will be displayed using that intrinsic size.
+
+An empty <div>, on the other hand, has no size of its own. If you add some text, the block size of the div will grow because it's defined by its content. Again, this is the intrinsic size of the element -- its size defined by its content.
+
+*** Setting a specific size
+
+We can, of course, give elements a specific size. When a size is given to an element we refer to it as an extrinsic size. Due to the problem of overflow, however, fixing the height of elements with lengths or percentages is something we need to do very carefully.
+
+**** Using percentages
+
+When using a percentage you need to be aware what is is a percentage of. In the case of a box inside another container, if you give the child box a percentage width it will be a percentage of the width of the parent container.
+
+**** Percentage margins and padding
+
+If you set margins and padding as a percentage, you'll notice the padding and margin on the top and bottom of the box are the same size as the margin on the left and right.
+
+When you use margin and padding set in percentages, the value is calculated from the inline size of the containing block -- therefore the width when working in a horizontal language.
+
+**** min- and max- sizes
+
+We can also ask CSS to give an element a minimum or a maximum size.
+
+A common use of max-width is to cause images to scale down if there is not enough space to display them at their intrinsic width while making sure they don't become larger than that width.
+
+This technique is used to make images responsive, so that when viewed on a smaller device they scale down appropriately. You should, however, not use this technique to load really large images and then scale them down in the browser. Images should be appropiately sized to be no larger than they need to be for the largest size they are displayed in the design.
+
+**** Viewport units
+
+The viewport -- which is the visible area of your page in the browser you are using to view a site -- also has a size. In CSS we have units which relative to the size of the viewport -- the vw unit for viewport width, and vh for viewport height. Using these units you can size somethign relative to the viewport of the user.
+
+1vh is equal to 1% of the viewport height, and 1vw is equal to 1% of the viewport width. You can use these units to size boxes, but also text.
+
+Sizing things according to the viewport can be useful in your designs. For example, if you want a full-page hero section to show before the rest of your content, making that part of your page 100vh high will push the rest of the content below the viewport, meaning that it will only appear once the document is scrolled.
+
+** Images, media, and form elements
+
+Images, other media, and form elements behave a little differently in terms of your ability to style them with CSS than regular boxes.
+
+*** Replaced elements
+
+Images and video are described as replaced elements. This means that CSS cannot affect the internal layout of these elements -- only their position on the page amongst other elements. As we will see however, there are various things that CSS can do with an image.
+
+Certain replaced elements, such as images and video, are also described as having an aspect ratio. This means that it has a size in both the horizontal (x) and the vertical (y) dimensiones, and will be displayed using the intrinsic dimensions of the file by default.
+
+**** Sizing images
+
+ The technique of using /max-width: 100%/ to resize images will also work with other replaced elements like *video* and *iframe* elements.
+
+ You can make other choices about images inside containers. For example, using object-fit (cover, contain, or fill).
+
+**** Replaced elements in layout
+
+ When using various CSS layout techniques on replaced elements, you may well find that they behave slightly differently to other elements. For example, in a flex or grid layout elements are stretched by default to fill the entire area. Images will not stretch and instead will be aligned to the start of the grid area or flex container.
+
+*** Form elements
+
+Form elements can be tricky. Many form controls are added to your page by the way of the <input> element. There are some additional elements such as <textarea> for multiline text input, and also elements used to contain and label parts of forms such as <fieldset> and <legend>.
+
+**** Styling text input elements
+
+Elements that allow for text input, like <input type="text">, specialized ones, like <input type="email">, and <textarea> ones behave like other boxes and are as such easily styled. However, their default CSS will vary according to the browser and OS the user is using.
+
+Some of the most complex form elements are rendered by the operative system and are unable to be styled. Assume that complex forms will look different across browsers.
+
+** Styling links
+
+When stlying links, remember the following pseudo-classes:
+
+- Link: A link which has a destination, styled using the :link pseudo-class.
+- Visited: A link when it has already been visited, styled using the :visited pseudo-class.
+- Hover: A link when it is being hovered by a user's mouse pointer, styled using the :hover pseudo-class.
+- Focus: A link when it has been focused (for example moved by a keyboard user using the Tab key or similar, or programmatically focused using HTMLElement.focus()) — this is styled using the :focus pseudo-class.
+- Active: A link when it is being activated (e.g. clicked on), styled using the :active pseudo-class. 
+
+By default:
+
+  1. Links are underlined.
+  2. Unvisited links are blue.
+  3. Visited links are purple.
+  4. When a click is hovered, the pointer changes to a little hand.
+  5. When a click is focused, an outline appears around the element.
+  6. When a click is active, it is red.
+
+Put link styles in the following order: LoVes Fear HAte.
+
+** Inline-block elements
+
+Spaces on the HTML code between inline-block elements create gaps that will be rendered between them.
+
+
+* CSS layout
+
+CSS page layouts are techniques that allow us to take elements contained in a web page and control where they are positioned relative to their default position in normal layout flow, the other elements around them, their parent container, or the main viewport/window. Main among them are:
+
+1. Normal flow
+2. The display property
+3. Flexbox
+4. Grid
+5. Floats
+6. Positioning
+7. Table layout
+8. Multiple-column layout
+
+** Properties that change how elements are laid outline
+
+1. The *display* property.
+2. Floats.
+3. The *position* property.
+4. Table layout.
+5. Multi-column layout.
+
+*** Position
+
+1. Static
+2. Relative
+3. Absolute
+4. Fixed
+5. Sticky
+
+* CSS units
+
+** Angle
+
+1. deg
+2. grad
+3. rad
+4. turn
+
+* CSS properties
+
+** linear-gradient
+
+linear-gradient
+  OPT = <side-or-corner> || <angle>
+  <color>+ (OPT <percentage> || <length>)

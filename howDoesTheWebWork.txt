@@ -1,0 +1,33 @@
+# Describe what the internet is.
+
+// The internet is not the world wide web
+// The internet is the foundation of the world wide web
+// Requests, packets, backends
+// Data is split in packets and send through several ways
+// Those packets then converge in the client at the right order to show the content
+
+It's a network of networks (i.e. several computers talking to each other through common protocols)
+
+# Describe what packets are and how they are used to transfer data.
+
+# Understand the differences between a web page, web server, web browser and search engine.
+
+A web page is a document that instructs a browser on how content should be rendered. A web server is a computer that hosts websites -- "hosting" meaning that all web pages and associated files are available on that computer. A web browser is a program that retrieves and displays web pages. A search engine, like Google, let's you make a query and search among many pages to see if there are matches.
+
+# Briefly explain what a client is.
+
+Someone who makes a request.
+
+# Briefly explain what a server is.
+
+Someone who answers a request.
+
+# Explain what IP addresses are
+
+It the unique name of a device on the internet.
+
+# Explain what DNS servers are.
+# In your own words, explain what happens when you run a search on google.com.
+
+/* How the internet works:
+    - Computers -> Router (to connect computers) -> Modem (to send data through the telephone infrastructure) -> ISP 1 (to send data to other ISPs) <- ISP 2 (the receiver) -> Modem 2 (data was sent through telephone lines) -> Router -> Computer/Server (that holds the data we want to access)

@@ -1,0 +1,9 @@
+** What are the differences between border and outline in CSS?
+1. Border takes space in the box model, while outline doesn't.
+2. Outline doesn't have to be rectangular, though it usually does.
+** What are the five states of a link in CSS?
+1. Link
+2. Visited
+3. Hover
+4. Focused
+5. Active

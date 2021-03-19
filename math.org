@@ -1,0 +1,82 @@
+#+OPTIONS: ^:{}
+
+* Math
+
+Fundamentals:
+
+  - Numbers
+  - Equations
+  - Functions
+
+Concepts:
+
+  + Algebra   -> Solving equations
+  + Functions -> Modelling the world
+  + Geometry  -> How to think geometrically
+
+* Chapter 1
+
+** Solving equations
+
+To solve an equation such as:
+
+    x^{2} - 4 = 45
+
+Is to answer "What is the value of x?" To do so we manipulate the original equation until we get one that lookes like this:
+
+    x = only numbers
+
+** Numbers
+
+Numbers are classified according to the following sets:
+
+1. Natural
+2. Integers
+3. Rational
+4. Real
+5. Complex
+
+*** Operations on numbers
+
+1. Addition (+)
+   - Commutative
+   - Associative
+2. Substraction (-)
+3. Multiplication (no special symbol is used in modern notation)
+   - Commutative
+   - Associative
+4. Division (divide /a/ into /b/ equal parts)
+5. Exponentiation (negative exponents mean "divide by" and fractional exponents describe square-root-like operations)
+   - The n^{th} root of /a/ is a number which, when multiplied together n times, will give a.
+   - Due to the commutative rule, a^{2/3} can be written "^{3}√2^{2}" or (^{3}√2)^{2}.
+
+*** Operator precedence
+
+1. Exponents and roots
+2. Products and divisions
+3. Additions and substractions
+
+** Variables
+
+Placeholders names for any number or unknown.
+
+
+*** Variable names
+
+Common naming patterns for variables:
+
+- x — general name for the unknown
+- v — velocity
+- ϑ, Φ — angles
+- x_{i}, x_{f} — an object's initial and final position
+- X — random variable in probability
+- C — costs in business along with P for profit and R for revenue
+
+* Glossary
+
+1. '=' is the equality symbol.
+2. An equal sign with three lines means "equivalent to" and is used when two mathematical objects are identical. Equivalence is a stronger relation than equality.
+3. '|x|' is the absolute value of x.
+4. Sets are groups of unique values of the same kind
+5. Algebraic numbers are those who are solutions to a polynomial equation. Transcendental numbers, like 𝛑 or 𝐞, are those who are not the solutions to any polynomial equation.
+6. A polynomial is a mathematical expression consisting of variables and coefficients, that involves only the operations of addition, substraction, multiplication, and non-negative integer exponentation of variables.

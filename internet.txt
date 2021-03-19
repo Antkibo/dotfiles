@@ -1,0 +1,5 @@
+The internet is a wire. This wire connects hundreds of devices. According to their role, some devices are servers and some are clients. Clients connect to the internet through an ISP (Internet Service Provider) and request content from servers. Servers are, usually, connected directy to the internet and listen for requests from clients. When such a request is sent, a server sends back the requested data.
+
+When data is sent through the internet, computers break the information into chunks called packets. When packets reach their destination they are reassembled in their original order.
+
+When several computers connected to the same ISP send and request packets, routers and IP addresses prevent data from one computer to end on another computer. As data goes through the internet, each router adds their own IP to the request. This makes possible for packets to go back to the client's device correctly.

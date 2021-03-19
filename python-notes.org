@@ -1,0 +1,14 @@
+* Chapter 0
+
+- Programming is for everyone.
+- Is about telling computers to do something for you.
+- Sometimes you program for others and other times for yourself.
+- Hardware architecture:
+  1. CPU or Central Processing Unit. Asks the Main Memory on what to do next and runs the program.
+  2. Main Memory. Where instructions are stored. It's very fast but its contents dissappear when the system is powered off.
+  3. Secondary Memory. Slower, permanent storage (disk drive).
+  4. Input devices.
+  5. Output devices.
+
+
+
