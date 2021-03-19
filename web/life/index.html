@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet" />
+    <title>Life According to Lincoln Loud</title>
+    <style>
+     *,
+     *::before,
+     *::after {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+     }
+
+     :root {
+       font-size: calc(10px + 0.2vw);
+     }
+
+     body {
+       font-size: 1.4rem;
+       font-family: Helvetica, Arial, sans-serif;
+       background-image: url('./bg.jpg');
+       background-position: top;
+       background-repeat: no-repeat;
+       background-size: cover;
+       background-attachment: fixed;
+       width: 90%;
+       margin: 0 auto;
+       line-height: 1.5;
+     }
+
+     header {
+       font-family: Imprima;
+       color: white;
+       margin: 1rem; 
+     }
+     
+     nav {
+       font-size: 1.8rem;
+       text-shadow: 1px 2px 1px black;
+       text-transform: uppercase;
+     }     
+
+     h1 {
+       font-size: 4rem;
+       text-align: center;
+       text-shadow: 1px 2px 1px black;
+     }
+
+     ul {
+       margin-top: 1rem;
+       list-style: none;
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 1rem;
+     }
+
+     li {
+       border: 1px solid #bbb;
+       border-radius: 2rem;
+       background-color: rgba(0, 0, 0, 0.3);
+       padding: 2rem;
+       text-align: center;
+     }
+
+     main {
+       font-family: Imprima;
+     }
+
+     section {
+       border: 2px solid orange;
+       margin-top: 2rem;
+       width: 100%;
+     }
+
+     section img {
+       max-width: 100%;
+     }
+
+     section table {
+       width: 100%;
+       border-collapse: collapse;
+       text-align: left;
+       table-layout: fixed;
+     }
+
+     thead th:nth-child(3) {
+       text-align: right;
+     }
+
+     tbody td:nth-child(3) {
+       text-align: right;
+     }
+
+     tbody td:nth-child(2) {
+       font-size: 2rem;
+     }
+
+     th,
+     td {
+       vertical-align: text-top;
+       padding: 1rem;
+     }
+     
+     section label {
+       padding: 1rem;
+       display: flex;
+       background-color: orange;
+       justify-content: space-between;
+       align-items: center;
+       font-size: 2rem;
+       font-weight: bold;
+     }
+
+     thead {
+       background-color: orange;
+     }
+
+     .toggle {
+       display: none;
+     }
+
+     .toggle-label {
+       display: block;
+       position: sticky;
+       top: 0;
+     }
+
+     .toggle-label:hover {
+       cursor: pointer;
+     }
+
+     .toggle-label::after {
+       content: " ";
+       
+       display: inline-block;
+       width: 0;
+       height: 0;
+
+       right: 10%;
+       top: 50%;
+
+       transform: translateY(-50%);
+
+       position: absolute;
+       vertical-align: middle;
+
+       border-left: 10px solid transparent;
+       border-right: 10px solid transparent;
+
+       border-bottom: 10px solid black;
+
+       transition: all 0.25s ease-in-out;
+     }
+
+     .collapsible-content {
+       max-height: 0;
+       overflow: hidden;
+
+       transition: max-height .25s ease-in-out;
+     }
+
+     .toggle:checked + .toggle-label + .collapsible-content {
+       max-height: 100vh;
+     }
+
+     .toggle:checked + .toggle-label::after {
+       transform: rotate(.5turn);
+     }
+
+     thead th:first-child {
+       display: none;
+     }
+
+     tbody td:first-child {
+       display: none;
+     }
+
+     @media screen and (min-width: 600px) {
+       thead th:first-child {
+         display: table-cell;
+       }
+
+       tbody td:first-child {
+         display: table-cell;
+       }
+     }
+     
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Life According to Lincoln Loud</h1>
+
+      <nav>
+        <ul class="nav-1">
+          <li>episodios</li>
+          <li>acerca de</li>
+          <li>log in</li>
+          <li>registrarse</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+          <input class="toggle" id="toggle-0" name="toggle_0" type="checkbox" />
+          <label class="toggle-label" for="toggle-0">Cortos u otros</label>
+        
+        <div class="collapsible-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Numero</th>
+                <th>Descripcion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>The Loud House (pilot)</td>
+                <td>01</td>
+                <td>Lincoln tries to get to the bathroom, but has to go through many obstacles along the way.</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Slice of Life</td>
+                <td>02</td>
+                <td>Lincoln and his sisters fight over the last slice of pizza.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+          <input class="toggle" id="toggle-1" name="toggle_1" type="checkbox" />
+          <label class="toggle-label" for="toggle-1">Temporada 1</label>
+        
+        <div class="collapsible-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Numero</th>
+                <th>Descripcion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>The Loud House (pilot)</td>
+                <td>01</td>
+                <td>Lincoln tries to get to the bathroom, but has to go through many obstacles along the way.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <input class="toggle" id="toggle-2" name="toggle_2" type="checkbox" />
+        <label class="toggle-label" for="toggle-2">Temporada 2</label>
+        
+        <div class="collapsible-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Numero</th>
+                <th>Descripcion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>The Loud House (pilot)</td>
+                <td>01</td>
+                <td>Lincoln tries to get to the bathroom, but has to go through many obstacles along the way.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <input class="toggle" id="toggle-3" name="toggle_3" type="checkbox" />
+        <label class="toggle-label" for="toggle-3">Temporada 3</label>
+        
+        <div class="collapsible-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Numero</th>
+                <th>Descripcion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>The Loud House (pilot)</td>
+                <td>01</td>
+                <td>Lincoln tries to get to the bathroom, but has to go through many obstacles along the way.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html> 

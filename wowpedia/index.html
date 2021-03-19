@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+     *,
+     *::before,
+     *::after {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+     }
+
+     :root {
+       font-size: calc(10px + 0.2vw);
+       font-family: Helvetica, Arial, sans-serif;
+       --color-font-white: #e0e0e0;
+       --color-table-odd-row: #181818;
+       --color-body-bg: #181818;
+       --color-table-bg: #101010;
+       --color-table-border: #383838;
+     }
+
+     body {
+       width: 90%;
+       max-width: 900px;
+       line-height: 1.5;
+       margin: 0 auto;
+       background-color: var(--color-body-bg);
+       color: var(--color-font-white);
+     }
+
+     h1,
+     h2,
+     h3 {
+       margin: 1rem 0;
+     }
+
+     h1 {
+       font-size: 2.4rem;
+       text-align: center;
+     }
+
+     h2 {
+       font-size: 2rem;
+     }
+
+     h3 {
+       font-size: 1.8rem;
+     }
+
+     p {
+       font-size: 1.4rem;
+     }
+
+     aside {
+       background-color: var(--color-table-bg);
+       border: 1px solid var(--color-table-border);
+       margin: 1rem auto;
+     }
+
+     figure {
+       margin: 1rem auto;
+       text-align: center;
+     }
+
+     figcaption {
+       font-size: 1.2rem;
+       font-style: italic;
+       margin: 0.4rem 0;
+     }
+
+     article > p,
+     section > p {
+       text-align: justify;
+       text-indent: 3ch;
+     }
+
+     ul {
+       list-style: none;
+       font-size: 1.4rem;
+     }
+
+     section {
+       margin: 2rem 0;
+     }
+
+     img {
+       max-width: 100%;
+     }
+
+     table {
+       font-size: 1.4rem;
+       background-color: var(--color-table-bg);
+       table-layout: fixed;
+       width: 100%;    
+       text-align: left;
+       margin: 1rem auto;
+     }
+
+     tbody tr:nth-child(odd) {
+       background-color: var(--color-table-odd-row);
+     }
+
+     th,
+     td {
+       vertical-align: top;
+       padding: 0.8rem;
+     }  
+
+     .row-header {
+       font-weight: bold;
+     }
+
+     .data-container {
+       font-size: 1.3rem;
+     }
+
+     .data-container tr:nth-child(odd) {
+       background-color: unset;
+     }
+
+     .data-container th,
+     .data-container td {
+       padding: 0.3rem 1rem;
+     }
+
+     .trivia li {
+       text-align: justify;
+       text-indent: 3ch;
+     }
+
+     .screenshot-container figure {
+       border: 1px solid var(--color-table-border);
+       padding: 1rem 0;
+       width: 80%;
+     }
+
+     @media screen and (min-width: 450px) {
+       .screenshot-container figure {
+         width: 100%;
+       }
+       
+       .screenshot-container {
+         display: grid;
+         grid-template-columns: repeat(auto-fill, 200px);
+         gap: 1rem;
+       }
+     }
+     @media screen and (min-width: 650px) {
+       
+       p {
+         margin-bottom: 1rem;
+       }
+
+       h1,
+       h2 {
+         border-bottom: 1px solid var(--color-table-border);
+       }
+
+       h2 {
+       }
+
+       .trivia ul {
+         list-style: initial;
+       }
+
+       .trivia li {
+         margin-left: 2rem;
+       }
+       
+       article > p,
+       section > p,
+       .trivia li {
+         text-align: unset;
+         text-indent: unset;
+       }
+       
+       aside {
+         width: 50%;
+         float: right;
+         margin-top: 0;
+         margin-left: 2rem;
+       }
+     }
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>World of Warcraft: Burning Crusade Classic</h1>
+        <aside>
+          <figure>
+            <img alt="The Burning Crusade logo: the words that spell World of Warcraft on a green background" src="https://static.wikia.nocookie.net/wowpedia/images/e/e2/WoW_BC_Classic_logo.png" />
+            <figcaption>World of Warcraft: Burning Crusade Classic</figcaption>
+          </figure>
+          <table class="data-container">
+            <tbody>
+              <tr>
+                <th scope="row">Developer(s)</th>
+                <td>Blizzard Entertainment</td>
+              </tr>
+              <tr>
+                <th scope="row">Publisher(s)</th>
+                <td>Blizzard Entertainment</td>
+              </tr>
+              <tr>
+                <th scope="row">Platforms</th>
+                <td>Microsoft Windows, macOS</td>
+              </tr>
+              <tr>
+                <th scope="row">Release</th>
+                <td>TBA</td>
+              </tr>
+              <tr>
+                <th scope="row">Genre(s)</th>
+                <td>Expansion</td>
+              </tr>
+            </tbody>
+          </table>
+        </aside>
+        <p>World of Warcraft: Burning Crusade Classic (shortened as BC Classic) is a server option for The Burning Crusade announced at BlizzConline.</p>
+
+        <p>Characters on progression realms will be able to continue forward to Outland while characters on era realms will continue on World of Warcraft: Classic. Players will also have the option to pay to create a copy of their character in order to continue playing on both realms. </p>
+        <section class="release">
+          <h2>Release</h2>
+          <p>
+            Like with World of Warcraft: Classic, content in Burning Crusade Classic will be released in phases. The phases as announced at BlizzConline are:</p>
+
+          <table>
+            <colgroup>
+              <col style="width: 30%" />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">Phase</th>
+                <th scope="col">Raids</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Launch</th>
+                <td>Karazhan, Gruul's Lair, and Magtheridon's Lair</td>
+              </tr>
+              <tr>
+                <th scope="row">Phase 2</th>
+                <td>The Eye and Serpentshrine Cavern</td>
+              </tr>
+              <tr>
+                <th scope="row">Phase 3</th>
+                <td>Battle for Mount Hyjal and Black Temple</td>
+              </tr>
+              <tr>
+                <th scope="row">Phase 4</th>
+                <td>Zul'Aman</td>
+              </tr>
+              <tr>
+                <th scope="row">Phase 5</th>
+                <td>Quel'Danas and Sunwell Plateau</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="planned-changes">
+          <h2>Planned changes</h2>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Change</th>
+                <th scope="col">Original behaviour</th>
+                <th scope="col">Reason</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Seal of Blood and Seal of Vengeance will be available to both factions</td>
+                <td>Only blood elf paladins had access to Seal of Blood while Alliance paladins had Seal of Vengeance</td>
+                <td>To better balance both factions. Overall, Seal of Blood just deals more damage and it's a big incentive to roll Horde over Alliance</td>
+              </tr>
+              <tr>
+                <td>Players will be able to create draenei and blood elf characters during the pre-patch and level them before the Dark Portal opens</td>
+                <td>Players were not able to create characters of the new races until Outland was open</td>
+                <td>To avoid players that want to play with characters of the new races to be stuck in the old world during the first weeks of progression. This also makes paladins and shaman available to the other faction during launch</td>
+              </tr>
+              <tr>
+                <td>Arena teams will be able to hold double the normal amount of players</td>
+                <td>Arena teams were only able to hold enough players for their bracket (e.g. a 2v2 Arena team could only have two players)</td>
+                <td>To give more flexibility to PvPers, as this system made it impossible to play if one of the members didn't log in</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="trivia">
+          <h2>Notes and trivia</h2>
+          <ul>
+            <li>The announcement of Burning Crusade Classic at BlizzConline was foreshadowed by the inclusion of Moon-touched Netherwhelp in The Celebration Collection.</li>
+          </ul>
+        </section>
+        <section class="gallery">
+          <h2>Gallery</h2>
+          <h3>Art</h3>
+          <div class="screenshot-container">
+            <figure>
+              <img alt="" src="https://static.wikia.nocookie.net/wowpedia/images/1/1c/Burning_Crusade_Classic_key_art.jpg" />
+              <figcaption>Key art</figcaption>
+
+            </figure>
+          </div>
+          <h3>Promotional screenshots</h3>
+          <div class="screenshot-container">
+            <figure>
+              <img alt="" src="https://static.wikia.nocookie.net/wowpedia/images/6/66/Burning_Crusade_Classic_BlizzConline_Fel_Reaver_3840x2160.jpg" />
+              <figcaption>Fel reaver</figcaption>
+            </figure>
+            <figure>
+              <img alt="" src="https://static.wikia.nocookie.net/wowpedia/images/2/2b/Burning_Crusade_Classic_BlizzConline_Karazhan_3840x2160.jpg" />
+              <figcaption>Karazhan</figcaption>
+            </figure>
+            <figure>
+              <img alt="" src="https://static.wikia.nocookie.net/wowpedia/images/2/2e/Burning_Crusade_Classic_BlizzConline_Nagrand_Nether_Ray_3840x2160.jpg" />
+              <figcaption>Nagrand Nether Ray</figcaption>
+            </figure>
+          </div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
