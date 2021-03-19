@@ -1,3 +1,2 @@
-export PATH=$PATH
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/tuxguitar
 export DOOMWADDIR="$HOME"/mods
+export SDL_AUDIODRIVER=alsa
