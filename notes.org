@@ -1,11 +1,7 @@
 * CSS
-
 ** Handling different text directions
-
 CSS has evolved in order to better support different directionality of content, such as right-to-left but also top-to-bottom. These different directionalities are called writing modes.
-
 *** What are writing modes?
-
 A writing mode in CSS refers to whether the text is running horizontally or vertically. The /writing-mode/ property lets us switch from one mode to another.
 
 The three possible values for the writing-mode property are:
@@ -17,19 +13,14 @@ The three possible values for the writing-mode property are:
 So what writing-mode actually does is setting the direction in which block-level elements are displayed on the page -- either from top-to-bottom, right-to-left, or left-to-right. This then dictates the direction text flows in sentences.
 
 When we switch the writing-mode, we are chaning which direction is block and which is inline. In a horizontal-tb writing mode the block direction runs from top to bottom; in a vertical-rl writing mode the block direction runs right-to-left horizontally. So the block dimension is always the direction blocks are displayed on the page in the writing mode in use. The inline dimension is always the direction a sentence flows.
-
 *** Direction
-
 In addition to writing mode we also have text direction. Some languages such as Arabic are written horizontally, but right-to-left. Due to the fact that writing mode and direction of text can change, newer CSS layout methods do not refer to left and right, and top and bottom. Instead they talk about start and end along with this idea of inline and block.
-
 *** Logical properties and values
-
 A lot of properties are tied to the physical dimensions of the screen, and make most sense when in a horizontal writing mode.
 
 To make adjusting properties for other modes besides top-to-bottom easier, CSS has recently developed a set of mapped properties. These essentially replace physical properties -- things like width and height -- with logical, or flow relative versions.
 
 The property mapped to width when in a horizontal writing mode is called /inline-size/ -- it refers to the size in the *inline dimension*. The property for height is named /block-size/ and is the size in the *block dimension*.
-
 **** Logical margin, border, and padding properties
 
 In the margin, border, and padding properties you will find many instances of physical properties, for example /margin-top/, /padding-left/, and /border-bottom/. In the same way that we have mapping for width and height there are mappings for these properties.
@@ -295,11 +286,65 @@ Put link styles in the following order: LoVes Fear HAte.
 
 Spaces on the HTML code between inline-block elements create gaps that will be rendered between them.
 
+** Box Model
+- Elements in CSS have outer (block, inline) and inner (normal, flex) display types.
+- The full CSS box model only applies to block boxes, inline boxes use only some of the behaviour defined in the box model.
+- Parts of the box:
+  + Content box
+  + Padding box
+  + Border box
+  + Margin box
+- In the standard box model, the width and height attributes define the width and height of the /content box/. Any padding and border is then added to the total width and height taken up by the box (margin doesn't count towards its actual size).
+- To turn on the alternative box model you set the /box-sizing/ attribute to *border-box*.
+- Margin collapsing.
+- Unlike margins, you cannot have negative amounts of padding -- the value must be 0 or a positive value.
+- On inline boxes, width and height are ignored. Vertical margin, padding, and border are respected but do not change the relationship of other content to our inline box. Horizontal margin, padding, and border are respected and do cause other content to move away from the box.
+- Inline-block provides a middle ground between block and inline. Inline-block boxes don't break onto a new line, but block box properties are respected.
+** Backgrounds and borders
+*** Background
+- Large background images are not scaled down to fit the box. Small background images are tiled to fill the box.
+- If you specify a *background-color* in addition to a *background-image* then the image displays on top of the color.
+- *background-repeat* controls the tilling behaviour of images. Valid values are:
+  1. no-repeat
+  2. repeat-x
+  3. repeat-y
+  4. repeat
+- *background-size* is used to fit the image inside the background. Valid values are:
+  1. cover
+  2. contain
+  3. a <length>
+  4. a <length> and a <percentage>
+- *background-position* allows you to choose the position in which a background image appears on the box it is applied to. Valid values are:
+  1. 1-value syntax:
+     + center
+     + top, left, bottom, right
+     + A <length> or <percentage>. This specifies the X coordinate relative to the left edge, with the Y coordinate set to 50%
+  2. 2-value syntax: one value defines X and the other defines Y.
+     + One of the keywords top, left, bottom, right.
+     + A <length> or <percentage>. If the other value is left or right, then this value defines Y, relative to the top edge. If the other value is top or bottom, then this value defines X, relative to the left edge. If both values are <length> or <percentage> values, then the first defines X and the second Y.
+     + The default value is top left, or 0% 0%.
+  3. 3-value syntax: Two values are keyword values, and the third is the offset for the preceding value.
+     + The first value is one of the keywords values top, left, bottom, right, or center. If left or right are given here, then this defines X. If top or bottom are given, then this defines Y and the other keyword value defines X.
+     + The single length or percentage value is an offset for the keyword value that precedes it. The combination of one keyword with two <length> or <percentage> values is not valid.
+  4. 4-value syntax: The first and third values are keyword values defining X and Y. The second and fourth values are offsets for the preceding X and Y keywords values.
+- *background-attachment* defines how the background scrolls when content scrolls. Valid values are:
+  1. scroll (scrolls when page is scrolled, doesn't move when element is scrolled)
+  2. fixed (doesn't scroll when page is scrolled, doesn't move when element is scrolled)
+  3. local (scrolls when page is scrolled, moves when element is scrolled)
+*** Recomendations
+1. If text would be on top of a background image, make sure it has enough contrast to be read comfortably. Also, add a background color where text could be read in case the image doesn't load.
+** Styling text
+*** Fundamentals
+The CSS properties used to style text generally fall into two categories: font styles and text layout styles.
 
+1. Font styles are properties that affect the font that is applied to the text.
+2. Text layout styles are properties that affect the spacing and other layout features of the text.
+*** Size
+The root element <html> has its font-size set to 16px as standard across browsers. An <h1> element has a size of 2em by default, so it will have a final size of 32px.
+
++ Avoid setting the font-size of container elements where possible.
 * CSS layout
-
 CSS page layouts are techniques that allow us to take elements contained in a web page and control where they are positioned relative to their default position in normal layout flow, the other elements around them, their parent container, or the main viewport/window. Main among them are:
-
 1. Normal flow
 2. The display property
 3. Flexbox
@@ -308,7 +353,6 @@ CSS page layouts are techniques that allow us to take elements contained in a we
 6. Positioning
 7. Table layout
 8. Multiple-column layout
-
 ** Properties that change how elements are laid outline
 
 1. The *display* property.
@@ -326,7 +370,6 @@ CSS page layouts are techniques that allow us to take elements contained in a we
 5. Sticky
 
 * CSS units
-
 ** Angle
 
 1. deg
@@ -335,9 +378,112 @@ CSS page layouts are techniques that allow us to take elements contained in a we
 4. turn
 
 * CSS properties
-
 ** linear-gradient
 
 linear-gradient
   OPT = <side-or-corner> || <angle>
   <color>+ (OPT <percentage> || <length>)
+
+* HTML
+** <p> element
+1. Don't use empty <p> elements to add space between other elements.
+2. You can achieve first-line indentation with CSS:
+
+#+BEGIN_SRC css
+p {
+  margin: 0;
+  /* Where ch is a unit that means "relative to the width of the '0' (zero)" */
+  text-indent: 3ch;
+}
+#+END_SRC
+
+** <h1>–<h6> elements
+1. Have only one <h1> element per page and use it to describe the overall purpose of the content.
+2. Don't use headings to resize text.
+3. Don't skip heading levels: always start from <h1>, followed by <h2>, and so on.
+4. Nest your headings as subsections to reflect the organization of the page content.
+5. Headings can also be used to label sectioning content, using aria-labelledby, for screen readers when there is more than one sectioning element on the same page. For example:
+
+#+BEGIN_SRC html
+<header>
+  <nav aria-labelledby="primary-navigation">
+    <h2 id="primary-navigation">Primary navigation</h2>
+    <!-- navigation items -->
+  </nav>
+</header>
+
+<footer>
+  <nav aria-labelledby="footer-navigation">
+    <h2 id="footer-navigation">Footer navigation</h2>
+    <!-- navigation items -->
+  </nav>
+</footer>
+#+END_SRC
+
+** When to use <img> vs <div> and background-image
+1. If you want to use an image as pure decoration, use the CSS property /background-image/.
+2. If your image is part of the *content*, use an <img> element.
+** Styling links
+- Use underlining for links, but not for other things.
+- Make them react in some way when hovered/focused, and in a slightly different way when activated.
+
+* Javascript
+** Interpreted vs compiled code
+** Client-side and server-side
+Some code runs on your browser, while other runs on the web server. The former is called client-side code, while the latter is called server-side code. Both complement each other to create rich websites. Using objects called XMLHttpRequest client-side code can ask data from the web server.
+* HTTP
+*HyperText Transfer Protocol* (HTTP) is an *application-layer protocol* for transmitting hypermedia documents, such as HTML. It was designed for communication between *web browsers* and *web servers*, but it can also be used for other purposes. HTTP follows a classical *client-server model*, with a client opening a connection to make a request, then waiting until it receives a response. HTTP is a *stateless protocol*, meaning that the server doesn't keep any data (state) between two requests.
+** Components
+- Client: the user-agent
+- Web server
+- Proxies
+** Basic aspects
+- HTTP is simple. HTTP is generally designed to be human readable.
+- Is extensible. HTTP headers make this protocol easy to extend and experiment with.
+- Is stateless, but not sessionless. While the core of HTTP is stateless, HTTP cookies allow the use of stateful sessions.
+- HTTP and connections. HTTP relies on the TCP standard, which is connection-based and reliable.
+** What can be controlled by HTTP
+1. Caching
+2. Relaxing the origin constraint.
+3. Authetication
+4. Proxy and tunneling
+5. Sessions
+** HTTP flow
+1. Open a TCP connection.
+2. Send an HTTP message.
+3. Read the response sent by the server.
+4. Close or reuse the connection for further requests.
+** HTTP requests
+An example HTTP request:
+
+    ~GET / HTTP/1.1~
+    ~Host: developer.mozilla.org~
+    ~Accept-Language: fr~
+
+Requests consists of the following elements:
+1. An HTTP method such as GET, POST, or a noun like OPTIONS or HEAD that defines the operation the client wants to perform.
+2. The path of the resources to fetch; the URL of the resource stripped from elements that are obvious from the context, for example without the protocol (http://), the domain (here, developer.mozilla.org), or the TCP port (here, 80).
+3. The version of the HTTP protocol.
+4. Optional headers that convey additional information for the servers.
+5. Or a body, for some methods like POST, similar to those in responses, which contain the resource sent.
+** HTTP responses
+An example response:
+
+~HTTP/1.1 200 OK~
+~Date: Sat, 09 Oct 2010 14:28:02 GMT~
+~Server: Apache~
+~Last-Modified: Tue, 01 Dec 2009, 20:18:22 GMT~
+~ETag: "51142bc1-7449-479b075b2891b"~
+~Accept-Ranges: bytes~
+~Content-Length: 29769~
+~Content-Type: text/html~
+
+Responses consist of the following elements:
+1. The version of the HTTP protocol they follow.
+2. A status code, indicating if the request was succesful, or not, and why.
+3. A status message, a non-authoritative short description of the status code.
+4. HTTP headers, like those for requests.
+5. Optionally, a body containing the fetched resource.
+** APIs based on HTTP
+- The most commonly used API based on HTTP is the XMLHttpRequest API, which can be used to exchange data between a user agent and a server. The modern Fetch API provides the same features with a more powerful and flexible feature set.
+- Another API, server-sent events, is a one-way service that allows a server to send events to the client, using HTTP as a transport mechanism.
