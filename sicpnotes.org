@@ -1,0 +1,19 @@
+*  Introduction
+- Write many computer programs
+- Seek both perfection of part and adequacy of collection
+- Computer programs are models of real or mental processes
+- Programs are rarely modeled to our permanent satisfaction
+- Since large programs grow from small ones, it is crucial to develop an arsenal of standard program structures of whose correctness we have become sure—we call them idioms—and learn to combine them into larger structures using organizational techniques of proven value
+- A programmer should acquire good algorithms and idioms
+- Keep having fun
+- Programs must be written for people to read
+- Programming is a way to express ideas
+- Mathematics deals with the "what is", computations deals with the "how to"
+* Building abstractions with procedures
+- Computational processes are abstract beings that inhabit computers. As they evolve, they manipulate other abstract things called data. Their evolution is directed by a pattern of rules called a program
+- Master software engineers can:
+  1. Organize programs so that they can be reasonably sure that the resulting processses will perform the tasks intended
+  2. Visualize the behavior of their systems in advance
+  3. Structure programs so that unanticipated problems do not lead to catastrophic consequences, and when problems do arise, they can debug their programs
+- Well-designed computational systems are designed in a modular manner, so that the parts can be constructed, replaced, and debugged separately
+- Lisp possesses unique features that make it an excellent medium for studying programming, such as the ability to blur the distinction between passive data and active processes

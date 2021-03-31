@@ -1,0 +1,26 @@
+#+TITLE: Article1
+
+* Burning Crusade zones ranked from least to best
+** Introduction
+** Body
+*** Terokkar Forest
+Pros:
+- Great end-game content (Skettis, fishing stuff, etc.)
+- Has Shattrath
+-
+*** Hellfire Peninsula
+Pros:
+- Story heavy
+- Elements that we would see further in the expansion are present (arakkoa, broken slavery, Kael'thas, Cenarion Expedition, void elementals, Illidan, etc.)
+- Terrain is not flat but angled. In some places it's like sliding into the void. This leads to zones like Shatter Point (Alliance) or the void elementals place.
+- Best lead-in into its dungeons
+Cons:
+- Too big, really
+- Horde-sided lore, though Alliance gets more lore figures
+
+*** Bladespire Mountains
+*** Shadowmoon Valley
+*** Netherstorm
+*** Zangarmarsh
+*** Nagrand
+** Conclusion

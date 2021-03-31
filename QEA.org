@@ -1,0 +1,27 @@
+#+TITLE: Q'barra — Eberron: Aberrant
+
+* Characters
+** Changeling rogue
+*** Relationships
+- Made the warpriest dwarf lost a bet
+** Warpriest dwarf
+*** Relationships
+- Doesn't like the changeling rogue too much
+- Likes to answer ranger warforged's questions
+** Ranger warforged
+*** Relationships
+- Trains under the tutelage of the ranger shifter
+*** Wants
+- To learn what people call "instinct"
+- Find an animal companion
+** Ranger shifter
+*** Relationships
+- Likes the ranger warforged, but doesn't trust his kin
+- Has three companions: an eagle, a wolf,
+*** Likes and dislikes
++ Gardening and farming
+- Interacting with others
+- Technology
+- Drinking too much
+*** Wants
+- Destroy lycanthropes

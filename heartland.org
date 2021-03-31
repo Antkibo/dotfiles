@@ -1,0 +1,18 @@
+* Introduction
+Skillsaw is the favorite son of the Doom community and with good reason. He's machine of award-winning works. His short, but awesome, catalog includes Vanguard, Lunatic, and the all-time fan favorites of Valiant and Ancient Aliens. During his career, he has specialized in Boom-compatible sets. It's awesome what he has achieved with a format from the 90s. Playing Valiant or Ancient Aliens, they feel like something from the future instead.
+
+Times change, however, and, thanks to the restless Doom community, new advanced features has appeared in new advanced source ports. GZDoom is the most popular source port for people looking to use new features unheared of in the 90s. But there are other, less popular, options like the Eternity Engine.
+
+The Eternity Engine has been an underdog in the space of source ports since ever. But what's the outcome of a Doom superstar like Paul De Bruyne using the understimated Eternity Engine? Now we know, for in March of 2021 Skillsaw released seven maps for it under the title of Heartland, granting the Eternity Engine.
+* Body
+** Theme/Aesthetic
+** Gameplay
+*** Levels/Flow
+*** New weapons
+The big changes are new replacements for the plasma gun and the BFG. Namely, the flamethrower and the grenade launcher.
+*** New enemies
+Heartland has several new demons, though not all are entirely new. Some, like the suicide bomber, hails from his previous works like Valiant
+*** Challenge
+This can be considered the easiest skillsaw's set to the date.
+* Conclusion
+Heartland is the first blockbuster for the Eternity Engine—its killer app, if you will. Skillsaw has
